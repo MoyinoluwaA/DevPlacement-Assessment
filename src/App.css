@@ -1,0 +1,91 @@
+body {
+  font-family: 'Poppins', sans-serif;
+}
+#fullPage {
+  width: 100vw;
+  height: 100vh;
+  background: #262A41 0% 0% no-repeat padding-box;
+  opacity: 1;
+  margin: 0px;
+}
+#left {
+  color:white;
+  width: 48%;
+  height: 100%;
+ 
+}
+#text-wrapper {
+  width: 70%;
+  margin:auto;
+  height: 100%;
+  padding: 12% 0px;
+}
+#right {
+  position: absolute;
+  top: 1.85%;
+  left: 48.9%;
+  width: 50.05%;
+  height: 1047px;
+  background: #F7F7FF 0% 0% no-repeat padding-box;
+  border: 1px solid #707070;
+  border-radius: 28px;
+  opacity: 1;
+}
+#hello {
+  font: normal normal 200 24px/60px Poppins;
+  letter-spacing: -0.05px;
+  margin: 0px;
+}
+#my-name {
+  font: normal normal bold 19px/61px Poppins;
+  letter-spacing: -0.04px;
+}
+#welcome {
+  font: normal normal 300 9px/20px Poppins;
+  letter-spacing: 0.23px;
+  opacity: 0.66;
+}
+.searchBox {
+  position: relative;
+}
+.searchBox i {
+  position: absolute;
+  left: 23px; 
+  top: 14px; 
+  color: white; 
+}
+.searchInput {
+  background: #3C3F54 0% 0% no-repeat padding-box !important;
+  border: 1px solid #3C3F54 !important;
+  box-sizing: border-box !important;
+  border-radius: 15px !important;
+  padding: 14px 55px !important;
+  font: normal normal 600 11px/40px Poppins !important;
+}
+#users {
+  font: normal normal 600 11px/39px Poppins;
+  opacity: 0.7;
+}
+#icon-group {
+  display: flex;
+  text-align: center;
+  margin: 1em;
+  font-size: 0.5em;
+}
+.icon {
+  width: 62px;
+  height:57px;
+  border-radius:14px;
+}
+.icons {
+  font-size: large;
+}
+.one {
+  background-color: #F935A9;
+}
+.two {
+  background-color: #30BBB5;
+}
+.three {
+  background-color: #7946C1;
+}

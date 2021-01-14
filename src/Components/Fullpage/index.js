@@ -1,0 +1,33 @@
+import React from 'react';
+import IconButton from '../Button'
+import SearchBox from '../Searchbox'
+
+
+const Index = () => {
+    return (
+        <div id="left">
+            <div id="text-wrapper">
+                <h2 id="hello">Hello, <span id="my-name">Emerald</span></h2>
+                <p id="welcome">Welcome to your dashboard, kindly sort through the user base</p>
+                <SearchBox placeholder="Find a user" />
+                <p id="users">Show Users</p>
+                <div id="icon-group">
+                    <div>
+                        <IconButton className="icon one" text={<i className="fa fa-users fa-4x" aria-hidden="true"></i>}/>
+                        <p>All Users</p>
+                    </div>
+                    <div>
+                        <IconButton className="icon two" text={<i className="fa fa-male fa-4x" aria-hidden="true"></i>}/>
+                        <p>Male Users</p>
+                    </div>
+                    <div>
+                        <IconButton className="icon three" text={<i className="fa fa-female fa-7x" aria-hidden="true"></i>}/>
+                        <p>Female Users</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export default Index;
