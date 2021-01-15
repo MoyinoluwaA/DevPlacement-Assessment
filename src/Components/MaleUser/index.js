@@ -25,7 +25,7 @@ const Index = () => {
     return (
         <div id="container">
             <div>
-                <h2 className="user-title">Female Users</h2>
+                <h2 className="user-title">Male Users</h2>
                 <p className="filterText">Filter by</p>
                 <div className="filtergroup">
                     <div className="filterGroup1 filterItem">
