@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Index = ({placeholder, handleChange}) => {
+const Index = ({className, placeholder, handleChange}) => {
     return (
-        <div className="searchBox">
+        <div className="search">
             <input type="search" 
-            className="searchInput"
+            className={className}
             placeholder={placeholder} 
             onChange={handleChange}
             

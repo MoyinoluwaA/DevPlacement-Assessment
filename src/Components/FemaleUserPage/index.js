@@ -1,5 +1,5 @@
 import React from 'react';
-import AllUser from '../AllUser';
+import FemaleUser from '../FemaleUser';
 import FullPage from '../Fullpage';
 
 const Index = () => {
@@ -7,7 +7,7 @@ const Index = () => {
         <div className="fullPage">
             <FullPage />
             <div className="right">
-                <AllUser />
+                <FemaleUser />
             </div>
         </div>
     )
