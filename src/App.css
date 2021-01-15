@@ -1,7 +1,7 @@
 body {
   font-family: 'Poppins', sans-serif;
 }
-#fullPage {
+.fullPage {
   width: 100vw;
   height: 100vh;
   background: #262A41 0% 0% no-repeat padding-box;
@@ -20,17 +20,6 @@ body {
   height: 100%;
   padding: 12% 0px;
 }
-#right {
-  position: absolute;
-  top: 1.85%;
-  left: 48.9%;
-  width: 50.05%;
-  height: 1047px;
-  background: #F7F7FF 0% 0% no-repeat padding-box;
-  border: 1px solid #707070;
-  border-radius: 28px;
-  opacity: 1;
-}
 #hello {
   font: normal normal 200 24px/60px Poppins;
   letter-spacing: -0.05px;
@@ -45,10 +34,10 @@ body {
   letter-spacing: 0.23px;
   opacity: 0.66;
 }
-.searchBox {
+.search {
   position: relative;
 }
-.searchBox i {
+.search i {
   position: absolute;
   left: 23px; 
   top: 14px; 
@@ -88,4 +77,170 @@ body {
 }
 .three {
   background-color: #7946C1;
+}
+
+.right {
+  position: absolute;
+  top: 1.85%;
+  left: 48.9%;
+  width: 50.05%;
+  height: 1047px;
+  background: #F7F7FF 0% 0% no-repeat padding-box;
+  border: 1px solid #707070;
+  border-radius: 28px;
+  opacity: 1;
+}
+#container {
+  width: 80%;
+  margin: 0px auto;
+}
+.user-title {
+  font: normal normal bold 22px/61px Poppins;
+  margin: 1em 0 0 ;
+  letter-spacing: -0.04px;
+  color: #262A41;
+}
+.filterText {
+  font: normal normal 300 12px/20px Poppins;
+  letter-spacing: -0.02px;
+  color: #262A41;
+  opacity: 0.9;
+  margin: 0;
+}
+.filtergroup {
+  display: flex;
+  align-content: center;
+  margin: 1em 0;
+}
+.filterItem {
+  margin: 0px 1.2em;
+}
+.filterGroup1 {
+  width:45%;
+  margin-left:0px !important;
+}
+.filterGroup2 {
+  width: 22%;
+}
+.searchUserInput {
+  background: #3C3F54 0% 0% no-repeat padding-box !important;
+  border: 1px solid #3C3F54 !important;
+  border-radius: 35px !important;
+  opacity: 0.11;
+  width:80% !important;
+  margin: 0 !important;
+  padding-left: 3em !important;
+}
+#filters {
+  display: inline;
+}
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  margin: 1em;
+  display: inline-block;
+  width: 40px;
+  height: 25px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute !important;
+  content: "" !important;
+  height: 26px !important;
+  width: 26px !important;
+  left: 4px !important;
+  bottom: 4px !important;
+  background-color: white !important;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3 !important;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px !important;
+}
+
+.slider.round:before {
+  border-radius: 50% !important;
+}
+
+.card-panel {
+  background: #FCFCFF 0% 0% no-repeat padding-box;
+  box-shadow: 5px 5px 20px #0000000D;
+  border-radius: 9px;
+  display: flex;
+  padding: 12px;
+}
+
+.card-image {
+  width: 20% !important;
+  height: 107px;
+  position: relative;
+}
+.card-image img {
+  position: absolute !important;
+  top:13.5px !important;
+  left: 13.5px !important;
+  bottom: auto;
+  border-radius: 50% !important;
+  width: 80px;
+  height: 80px;
+}
+.card-text {
+  width: 80%
+}
+#user-name {
+  font: normal normal bold 18px/40px Poppins;
+  letter-spacing: -0.02px;
+  color: #262A41;
+  margin: 0px;
+}
+.card-content {
+  padding: 12px 12px 12px 0 !important;
+}
+#contact {
+  display:flex;
+}
+.contact-items {
+  margin: 1em;
+  font: normal normal 300 11px/25px Poppins;
+  letter-spacing: -0.02px;
+  color: #262A41;
+}
+.shift-text {
+  padding-left: 0.5em;
 }
