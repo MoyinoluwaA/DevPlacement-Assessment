@@ -1,12 +1,12 @@
 import React from 'react';
 
 import RightUpperSection from '../../Components/Right-upper-section'
-import GetUser from '../../Pages/ProfilePage/GetUser'
+import GetUser from '../GetUser'
 import Button from '../../Components/Button'
 // import Pagination from '../../Components/Pagination'
 
 
-const apiUrl = "https://randomuser.me/api/?page=3&results=9&seed=abc"
+const apiUrl = "https://randomuser.me/api/?results=9&seed=abc"
 
 const Index = () => {
     // const pageNumbers = [];
