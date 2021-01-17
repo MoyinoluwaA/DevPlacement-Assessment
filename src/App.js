@@ -2,9 +2,10 @@ import React from 'react';
 import {BrowserRouter, Switch, Route} from'react-router-dom'
 import './App.css';
 
-import LandingPage from './Components/LandingPage'
-import MalePage from './Components/MaleUserPage'
-import FemalePage from './Components/FemaleUserPage'
+import LandingPage from './Pages/LandingPage'
+import MalePage from './Pages/MaleUserPage'
+import FemalePage from './Pages/FemaleUserPage'
+import ProfilePage from './Pages/ProfilePage'
 
 
 function App() {
@@ -19,6 +20,9 @@ function App() {
           </Route>
           <Route path="/female">
             <FemalePage />
+          </Route>
+          <Route path="/profile">
+            <ProfilePage />
           </Route>
         </Switch>
       </BrowserRouter>

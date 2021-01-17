@@ -15,19 +15,19 @@ const Index = () => {
                 <div id="icon-group">
                     <div>
                         <NavLink to="/">
-                            <IconButton className="icon one" text={<i className="fa fa-users fa-4x" aria-hidden="true"></i>}/>
+                            <IconButton className="icon one" text={<i className="fa fa-users resize-gender-icon" aria-hidden="true"></i>}/>
                         </NavLink>
                         <p>All Users</p>
                     </div>
                     <div>
                         <NavLink to="/male">
-                            <IconButton className="icon two" text={<i className="fa fa-male fa-4x" aria-hidden="true"></i>}/>
+                            <IconButton className="icon two" text={<i className="fa fa-male resize-gender-icon" aria-hidden="true"></i>}/>
                         </NavLink>
                         <p>Male Users</p>
                     </div>
                     <div>
                         <NavLink to="/female">
-                            <IconButton className="icon three" text={<i className="fa fa-female fa-7x" aria-hidden="true"></i>}/>
+                            <IconButton className="icon three" text={<i className="fa fa-female resize-gender-icon" aria-hidden="true"></i>}/>
                         </NavLink>
                         <p>Female Users</p>
                     </div>

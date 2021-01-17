@@ -1,13 +1,13 @@
 import React from 'react';
-import MaleUser from '../MaleUser';
-import FullPage from '../Fullpage';
+import FemaleUser from '../../src/Components/FemaleUser';
+import FullPage from '../../src/Components/Fullpage';
 
 const Index = () => {
     return (
         <div className="fullPage">
             <FullPage />
             <div className="right">
-                <MaleUser />
+                <FemaleUser />
             </div>
         </div>
     )
