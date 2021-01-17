@@ -1,5 +1,4 @@
 import React from 'react'
-import GetUser from '../GetUser'
 
 const Index = ({users}) => {
     return (

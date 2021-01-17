@@ -7,7 +7,7 @@ const Index = ({apiUrl}) => {
     const [usersArray, setUsersArray] = useState([])
     const [visible, setVisible] = useState(true)
     const [loading, setLoading] = useState(false)
-    const [currentPage, setCurrentPage] = useState(1)
+    const [currentPage] = useState(1)
     const [usersPerPage] = useState(3)
 
     useEffect(() => {

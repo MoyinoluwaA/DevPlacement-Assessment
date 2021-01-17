@@ -1,5 +1,4 @@
 import React from 'react'
-import {NavLink} from 'react-router-dom'
 
 import Card from '../../Components/Card'
 import Button from '../../Components/Button'
@@ -30,9 +29,9 @@ const Index = ({users,loading, userDetails}) => {
                                         <i class="fa fa-phone" aria-hidden="true"></i>
                                         <span className="shift-text">{user.phone}</span>
                                     </div>
-                                    {/* <NavLink to="/profile" className="contact-items last"> */}
-                                        <Button onClick={() => userDetails(user)} className="more-info-btn" text={<i class="fa fa-arrow-right resize-icon" aria-hidden="true"></i>} />
-                                    {/* </NavLink> */}
+                                    <Button onClick={() => userDetails(user)} className="more-info-btn" 
+                                    text={<i class="fa fa-arrow-right resize-icon" aria-hidden="true"></i>} 
+                                    />
                                 </div>
                             </div>
                         </Card>

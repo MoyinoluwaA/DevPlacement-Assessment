@@ -1,39 +1,41 @@
-import React from 'react';
-import {NavLink} from 'react-router-dom'
-import IconButton from '../Button'
-import SearchBox from '../Searchbox'
-
+import React,{useState} from 'react';
+// import {NavLink} from 'react-router-dom'
+import LeftSection from '../Left-section'
+import AllUsers from '../../Users/AllUser'
+import MaleUsers from '../../Users/MaleUser'
+import FemaleUsers from '../../Users/FemaleUser'
 
 const Index = () => {
+    const [componentToShow, setComponentToShow] = useState("AllUsers")
+
+    const handleAllUser = () => {
+        setComponentToShow("AllUsers")
+    }
+
+    const handleMaleUser = () => {
+        setComponentToShow("MaleUsers")
+    }
+
+    const handleFemaleUser = () => {
+        setComponentToShow("FemaleUsers")
+    }
+
     return (
-        <div id="left">
-            <div id="text-wrapper">
-                <h2 id="hello">Hello, <span id="my-name">Emerald</span></h2>
-                <p id="welcome">Welcome to your dashboard, kindly sort through the user base</p>
-                <SearchBox className="searchInput" placeholder="Find a user" />
-                <p id="users">Show Users</p>
-                <div id="icon-group">
-                    <div>
-                        <NavLink to="/">
-                            <IconButton className="icon one" text={<i className="fa fa-users resize-gender-icon" aria-hidden="true"></i>}/>
-                        </NavLink>
-                        <p>All Users</p>
-                    </div>
-                    <div>
-                        <NavLink to="/male">
-                            <IconButton className="icon two" text={<i className="fa fa-male resize-gender-icon" aria-hidden="true"></i>}/>
-                        </NavLink>
-                        <p>Male Users</p>
-                    </div>
-                    <div>
-                        <NavLink to="/female">
-                            <IconButton className="icon three" text={<i className="fa fa-female resize-gender-icon" aria-hidden="true"></i>}/>
-                        </NavLink>
-                        <p>Female Users</p>
-                    </div>
-                </div>
+        <div className="fullPage">
+            <div id="left">
+                <LeftSection 
+                handleAllUser={handleAllUser} 
+                handleMaleUser={handleMaleUser} 
+                handleFemaleUser={handleFemaleUser} 
+                />
+            </div>
+            <div className="right">
+                {(componentToShow === "AllUsers")? <AllUsers /> :
+                (componentToShow === "MaleUsers")? <MaleUsers />:
+                (componentToShow === "FemaleUsers")? <FemaleUsers />: null}
             </div>
         </div>
+
     )
 }
 
