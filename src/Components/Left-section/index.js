@@ -8,29 +8,32 @@ const Index = (props) => {
         <div id="text-wrapper">
             <h2 id="hello">Hello, <span id="my-name">Emerald</span></h2>
             <p id="welcome">Welcome to your dashboard, kindly sort through the user base</p>
-            <SearchBox className="searchInput" placeholder="Find a user" />
+            <div className="left-search">
+                <SearchBox className="searchInput" placeholder="Find a user" />
+                <i class="fa fa-search left-search-icon" aria-hidden="true"></i>       
+            </div>
             <p id="users">Show Users</p>
             <div id="icon-group">
-                <div>
+                <div className="icon-spacing">
                     <IconButton className="icon one" 
                     text={<i className="fa fa-users resize-gender-icon" aria-hidden="true"></i>}
                     onClick={handleAllUser}
                     />
-                    <p>All Users</p>
+                    <p className="icon-text">All Users</p>
                 </div>
-                <div>
+                <div className="icon-spacing">
                     <IconButton className="icon two" 
                     text={<i className="fa fa-male resize-gender-icon" aria-hidden="true"></i>}
                     onClick={handleMaleUser}
                     />
-                    <p>Male Users</p>
+                    <p className="icon-text">Male Users</p>
                 </div>
-                <div>
+                <div className="icon-spacing">
                     <IconButton className="icon three" 
                     text={<i className="fa fa-female resize-gender-icon" aria-hidden="true"></i>}
                     onClick={handleFemaleUser}
                     />
-                    <p>Female Users</p>
+                    <p className="icon-text">Female Users</p>
                 </div>
             </div>
         </div>

@@ -2,7 +2,7 @@ import React from 'react'
 import PaginationButton from '../Button'
 
 
-const Index = ({onClickPrev, onClickNext, usersPerPage, totalUsers}) => {
+const Index = ({onClickPrev, onClickNext, classNamePrev, classNameNext}) => {
     // const pageNumbers = [];
     // for (let i = 1; i <= Math.ceil(totalUsers/usersPerPage); i++) {
     //     pageNumbers.push(i);
@@ -12,12 +12,12 @@ const Index = ({onClickPrev, onClickNext, usersPerPage, totalUsers}) => {
                 <PaginationButton 
                 text={<i class="fa fa-arrow-left resize-icon" aria-hidden="true"></i>} 
                 onClick={onClickPrev} 
-                className="prev-btn"
+                className={classNamePrev}
                 />
                 <PaginationButton 
                 text={<i class="fa fa-arrow-right resize-icon" aria-hidden="true"></i>} 
                 onClick={onClickNext} 
-                className="next-btn" 
+                className={classNameNext} 
                 />
         </div>
     )

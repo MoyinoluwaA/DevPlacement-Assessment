@@ -1,5 +1,4 @@
 import React,{useState} from 'react';
-// import {NavLink} from 'react-router-dom'
 import LeftSection from '../Left-section'
 import AllUsers from '../../Users/AllUser'
 import MaleUsers from '../../Users/MaleUser'
@@ -31,8 +30,9 @@ const Index = () => {
             </div>
             <div className="right">
                 {(componentToShow === "AllUsers")? <AllUsers /> :
-                (componentToShow === "MaleUsers")? <MaleUsers />:
-                (componentToShow === "FemaleUsers")? <FemaleUsers />: null}
+                (componentToShow === "MaleUsers")? <MaleUsers  />:
+                (componentToShow === "FemaleUsers")? <FemaleUsers />:
+                null}
             </div>
         </div>
 
