@@ -12,7 +12,7 @@ const Index = ({apiUrl, heading}) => {
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)
     const [usersPerPage] = useState(3)
-    const [search, setSearch] = useState("")
+    // const [search, setSearch] = useState("")
 
     // Get Users from Api for All, Female and Male Users
     useEffect(() => {
@@ -74,9 +74,9 @@ const Index = ({apiUrl, heading}) => {
         download(csvData)
     }
 
-    const handleSearch =(e) => {
-        setSearch(e.target.value);
-    }
+    // const handleSearch =(e) => {
+    //     setSearch(e.target.value);
+    // }
 
     
     // const filteredCountries = usersArray.location[country].filter( country => {
