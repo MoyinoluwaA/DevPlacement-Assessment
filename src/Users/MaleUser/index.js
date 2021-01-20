@@ -2,7 +2,7 @@ import React from 'react'
 import GetUser from '../GetUser'
 
 // Url for male users
-const apiMaleUrl = "https://randomuser.me/api/?gender=male&results=42%seed=abc"
+const apiMaleUrl = "https://randomuser.me/api/?gender=male&results=42"
 
 const Index = () => {
     
