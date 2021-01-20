@@ -12,7 +12,7 @@ const Index = ({apiUrl, heading}) => {
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)
     const [usersPerPage] = useState(3)
-    // const [search, setSearch] = useState("")
+    const [search, setSearch] = useState("")
 
     // Get Users from Api for All, Female and Male Users
     useEffect(() => {
@@ -26,7 +26,7 @@ const Index = ({apiUrl, heading}) => {
         }
         fetchApi();
     }, [apiUrl])
-    console.log(usersArray)
+   
 
     // creating body of download csv file
     const objectToCsv = function(cdata) {
@@ -74,12 +74,23 @@ const Index = ({apiUrl, heading}) => {
         download(csvData)
     }
 
-    // const handleSearch =(e) => {
-    //     setSearch(e.target.value);
-    // }
+    const handleSearch =(e) => {
+        setSearch(e.target.value);
+    }
 
-    
-    // const filteredCountries = usersArray.location[country].filter( country => {
+    // const handleEnter = (e)=> {
+    //     if (e.key === "Enter") {
+    //         onSearch(search)
+    //     }
+    // }
+    // const title = user.name.title.toLowerCase();
+    // const titleList = (usersArray.map((user)=> user.name.title) )
+    // console.log(titleList)
+
+    // const filteredTitle = titleList.filter(title => {
+    //     return title.toLowerCase().includes(search.toLowerCase())
+    // })
+    // const filteredCountries = countries.filter( country => {
     //     return country.name.toLowerCase().includes(search.toLowerCase())
     // })
 
@@ -123,13 +134,18 @@ const Index = ({apiUrl, heading}) => {
         <div>
             {visible ?
             <div>
-                <RightUpperSection heading={heading} />
-                <Users users={currentUsers} 
-                loading={loading} 
-                userDetails={userDetails} 
-                handlePrev={handlePrev}
-                handleNext={handleNext}
-                onClickDownload={getReport} />
+                <RightUpperSection heading={heading} 
+                handleSearch={handleSearch}
+                value={search} />
+                {/* {filteredTitle.map(()=>( */}
+                    <Users users={currentUsers} 
+                    loading={loading} 
+                    userDetails={userDetails} 
+                    handlePrev={handlePrev}
+                    handleNext={handleNext}
+                    onClickDownload={getReport}
+                    />
+                {/* ))} */}
             </div> :
             <div>
                 <RightUpperSection heading="User List" />
