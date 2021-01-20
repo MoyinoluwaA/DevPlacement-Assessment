@@ -10,7 +10,7 @@ const Index = (props) => {
             <p id="welcome">Welcome to your dashboard, kindly sort through the user base</p>
             <div className="left-search">
                 <SearchBox className="searchInput" placeholder="Find a user" />
-                <i class="fa fa-search left-search-icon" aria-hidden="true"></i>       
+                <i className="fa fa-search left-search-icon" aria-hidden="true"></i>       
             </div>
             <p id="users">Show Users</p>
             <div id="icon-group">

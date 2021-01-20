@@ -21,16 +21,16 @@ const Index = ({users,loading, userDetails, handlePrev, handleNext, onClickDownl
                     <p>{user.location.street["number"]} {user.location.street["name"]}, {user.location.city}, {user.location.state}</p>
                     <div id="contact">
                         <div className="first contact-items">
-                            <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                            <i className="fa fa-envelope-o" aria-hidden="true"></i>
                             <span className="shift-text">{user.email}</span>
                         </div>
                         <div className="contact-items">
-                            <i class="fa fa-phone" aria-hidden="true"></i>
+                            <i className="fa fa-phone" aria-hidden="true"></i>
                             <span className="shift-text">{user.phone}</span>
                         </div>
                         <div className="more-info-btn contact-items last">
                             <Button onClick={() => userDetails(user)} className="more-info-btn" 
-                            text={<i class="fa fa-arrow-right resize-icon" aria-hidden="true"></i>} 
+                            text={<i className="fa fa-arrow-right resize-icon" aria-hidden="true"></i>} 
                             />
                         </div>
                     </div>
@@ -39,15 +39,13 @@ const Index = ({users,loading, userDetails, handlePrev, handleNext, onClickDownl
         </div>
     )
 
-    console.log(user)
-
     return (
         <div>
             {user}
             <div className="download-page-btn">
                 <Button 
                 className="download-btn"
-                text={<i class="fa fa-cloud-download" aria-hidden="true"></i>} 
+                text={<i className="fa fa-cloud-download" aria-hidden="true"></i>} 
                 children="   Download results"
                 onClick={onClickDownload}
                 />
