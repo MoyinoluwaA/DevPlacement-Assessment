@@ -8,11 +8,14 @@ import UserList from '../UserProfile'
 const Index = ({apiUrl, heading}) => {
     // define states
     const [usersArray, setUsersArray] = useState([])
+    const [filteredUsers, setFilteredUsers] = useState([])
+    const [status, setStatus] = useState(true)
     const [visible, setVisible] = useState(true)
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)
     const [usersPerPage] = useState(3)
     const [search, setSearch] = useState("")
+    const[user, setUser] = useState()
 
     // Get Users from Api for All, Female and Male Users
     useEffect(() => {
@@ -26,6 +29,10 @@ const Index = ({apiUrl, heading}) => {
         }
         fetchApi();
     }, [apiUrl])
+
+    useEffect(() => {
+        setFilteredUsers(usersArray)
+    }, [usersArray])
    
 
     // creating body of download csv file
@@ -62,7 +69,7 @@ const Index = ({apiUrl, heading}) => {
     
     // Getting data for csv download
     const getReport = () => {
-        const cdata = usersArray.map(row => ({
+        const cdata = filteredUsers.map(row => ({
             firstName: row.name.first,
             lastName: row.name.last,
             email: row.email,
@@ -74,37 +81,81 @@ const Index = ({apiUrl, heading}) => {
         download(csvData)
     }
 
+    // handle search input
     const handleSearch =(e) => {
         setSearch(e.target.value);
+        if (search === '') {
+            setStatus(true)
+        }
     }
 
-    // const handleEnter = (e)=> {
-    //     if (e.key === "Enter") {
-    //         onSearch(search)
-    //     }
-    // }
-    // const title = user.name.title.toLowerCase();
-    // const titleList = (usersArray.map((user)=> user.name.title) )
-    // console.log(titleList)
+    // search functionality
+    const onSearch = (e)=> {
+        e.preventDefault()
 
-    // const filteredTitle = titleList.filter(title => {
-    //     return title.toLowerCase().includes(search.toLowerCase())
-    // })
-    // const filteredCountries = countries.filter( country => {
-    //     return country.name.toLowerCase().includes(search.toLowerCase())
-    // })
+        const filter = document.getElementById('filters')
+
+        if (filter.selectedIndex === 0) {
+
+            let filteredCountries = usersArray.filter(user => {
+                if (user.location.country.toLowerCase().includes(search.toLowerCase())) {
+                    return user
+                } 
+                return null
+            })
+
+            filteredCountries.length >= 1 ? setFilteredUsers(filteredCountries) : setStatus(false)
+        
+        } else if (filter.selectedIndex === 1) {
+
+            let filteredAge = usersArray.filter(user => {
+                if (search >= user.dob.age) {
+                    return user
+                } 
+                return null
+            })
+
+            filteredAge.length >= 1 ? setFilteredUsers(filteredAge) : setStatus(false)
+
+        } else if (filter.selectedIndex === 2) {
+
+            let filteredGender = usersArray.filter(user => {
+                if (user.gender.toLowerCase().includes(search.toLowerCase())) {
+                    return user
+                } 
+                return null
+            })
+
+            filteredGender.length >= 1 ? setFilteredUsers(filteredGender) : setStatus(false)
+        
+
+        } else {
+
+            let filteredState = usersArray.filter(user => {
+                if (user.location.state.toLowerCase().includes(search.toLowerCase())) {
+                    return user
+                } 
+                return null
+            })
+
+            filteredState.length >= 1 ? setFilteredUsers(filteredState) : setStatus(false)
+
+        }
+        
+    }
 
     const indexOfLastUser = currentPage * usersPerPage;
     const indexOfFirstUser = indexOfLastUser - usersPerPage;
-    const currentUsers = usersArray.slice(indexOfFirstUser, indexOfLastUser);
-    const user = currentUsers[0]
+    const currentUsers = filteredUsers.slice(indexOfFirstUser, indexOfLastUser);
+    
     
     // To display UserList
     const userDetails = (user) => {
         setVisible(false);
-        console.log(user);
+        setUser(user)
         return user;
     } 
+
 
     // To navigate to the previous page of All,Male and Female Users
     const handlePrev = (e) => {
@@ -118,7 +169,7 @@ const Index = ({apiUrl, heading}) => {
     // To navigate to the next page of All,Male and Female Users
     const handleNext = (e) => {
         e.preventDefault();
-        if (currentPage === 14) {
+        if (currentPage === Math.round(filteredUsers.length / usersPerPage)) {
             return false;
         } 
         setCurrentPage(currentPage + 1);
@@ -136,8 +187,10 @@ const Index = ({apiUrl, heading}) => {
             <div>
                 <RightUpperSection heading={heading} 
                 handleSearch={handleSearch}
+                onSubmit={onSearch}
                 value={search} />
-                {/* {filteredTitle.map(()=>( */}
+
+                {status? 
                     <Users users={currentUsers} 
                     loading={loading} 
                     userDetails={userDetails} 
@@ -145,21 +198,17 @@ const Index = ({apiUrl, heading}) => {
                     handleNext={handleNext}
                     onClickDownload={getReport}
                     />
-                {/* ))} */}
+                : 
+                    <div className='error-msg'>
+                        No user matches your search. Please search for another user.
+                    </div>
+                }
             </div> :
             <div>
                 <RightUpperSection heading="User List" />
-                <UserList onClick={handleBack} user={user} userProfile={userDetails}/>
+                <UserList onClick={handleBack} user={user}/>
             </div>
             } 
-             {/* {filteredCountries.map(() => (
-                <Users users={currentUsers} 
-                // key={idx}
-                loading={loading} 
-                userDetails={userDetails} 
-                handlePrev={handlePrev}
-                handleNext={handleNext} /> 
-             )) } */}
             
         </div>
     )

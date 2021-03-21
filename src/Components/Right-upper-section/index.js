@@ -2,12 +2,7 @@ import React from 'react'
 import SearchBox from '../Searchbox'
 import {Switch} from 'react-materialize'
 
-const Index = ({heading, handleSearch, handleEnter, value}) => {
-    // const [search, setSearch] = useState("")
-
-    // const handleSearch =(e) => {
-    //     setSearch(e.target.value);
-    // }
+const Index = ({heading, handleSearch, onSubmit, value}) => {
 
     return (
         <div>
@@ -18,7 +13,7 @@ const Index = ({heading, handleSearch, handleEnter, value}) => {
                     <SearchBox className="searchUserInput" 
                     placeholder="Find in list" 
                     handleChange={handleSearch} 
-                    handleEnter={handleEnter} 
+                    onSubmit={onSubmit} 
                     value={value}/>
                     <i className="fa fa-search right-search-icon" aria-hidden="true"></i>
                 </div>
