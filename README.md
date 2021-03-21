@@ -6,3 +6,8 @@ Project [site](https://moyindevplacementassessment.netlify.app/).
 
 ReactJs
 
+## Functionalities
+Search
+API integration
+Conditional Rendering
+
