@@ -19,6 +19,14 @@ const Index = () => {
         setComponentToShow("FemaleUsers")
     }
 
+    // const handleSearch =(e) => {
+    //     setSearch(e.target.value);
+    // }
+
+    // const onSearchUser = (e) => {
+    //     e.preventDefault()
+    // }
+
     return (
         <div className="fullPage">
             <div id="left">
@@ -26,12 +34,16 @@ const Index = () => {
                 handleAllUser={handleAllUser} 
                 handleMaleUser={handleMaleUser} 
                 handleFemaleUser={handleFemaleUser} 
+                // handleSearch={handleSearch}
+                // onSearchUser={onSearchUser}
+                // value={search}
                 />
             </div>
             <div className="right">
                 {(componentToShow === "AllUsers")? <AllUsers /> :
                 (componentToShow === "MaleUsers")? <MaleUsers  />:
                 (componentToShow === "FemaleUsers")? <FemaleUsers />:
+                (componentToShow === "SearchUsers")? <FemaleUsers />:
                 null}
             </div>
         </div>

@@ -8,7 +8,7 @@ const Index = ({onClick, user}) => {
     return (
         <div>
             <Button className="back-btn" 
-            text={<i class="fa fa-arrow-left resize-icon back-icon" aria-hidden="true"></i>}
+            text={<i className="fa fa-arrow-left resize-icon back-icon" aria-hidden="true"></i>}
             onClick={onClick} 
             />
             <span >RESULTS</span>
@@ -17,19 +17,19 @@ const Index = ({onClick, user}) => {
                     <img src={user.picture.large} alt="profile-pic" />
                 </div>
                 <div className="profile-text">
-                    <h3 className="profile-name">{user.name.title} {user.name.first} {user.name.last} <span classNmae="age">{user.dob.age}</span></h3>
+                    <h3 className="profile-name">{user.name.title} {user.name.first} {user.name.last} <span className="age">{user.dob.age}</span></h3>
                     <p>{user.location.street["number"]} {user.location.street["name"]}, {user.location.city}, {user.location.state}</p>
                     <div className="profile-email">
-                        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                        <i className="fa fa-envelope-o" aria-hidden="true"></i>
                         <span className="shift-text">{user.email}</span>
                     </div>
                     <p className="registration-date">JOINED: {date.split("", [10])}</p>
                     <div className="phone">
-                        <i class="fa fa-phone" aria-hidden="true"></i>
+                        <i className="fa fa-phone" aria-hidden="true"></i>
                         <span className="shift-text">{user.phone}</span>
                     </div>
                     <div className="phone">
-                        <i class="fa fa-mobile" aria-hidden="true"></i>
+                        <i className="fa fa-mobile" aria-hidden="true"></i>
                         <span className="shift-text">{user.cell}</span>
                     </div>
                 </div>
@@ -37,7 +37,7 @@ const Index = ({onClick, user}) => {
             <div className="download-page-btn">
                 <Button 
                 className="download-btn disable"
-                text={<i class="fa fa-cloud-download" aria-hidden="true"></i>} 
+                text={<i className="fa fa-cloud-download" aria-hidden="true"></i>} 
                 children="   Download results"
                 />
                 <Pagination 

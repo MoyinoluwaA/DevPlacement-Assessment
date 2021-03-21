@@ -365,6 +365,10 @@ body {
 .disable {
   opacity: 0.4;
 }
+.error-msg {
+  margin-top: 60px;
+  text-align: center;
+}
 
 @media only screen and (max-width: 650px) {
   .fullPage {
@@ -377,6 +381,9 @@ body {
     margin: 0px;
     left:0;
     right: 0;
+  }
+  .right {
+    margin-top: 15px;
   }
   #text-wrapper {
     width: 87%;
@@ -415,15 +422,19 @@ body {
     align-items: center;
     height: 165px;
   }
-  /* .profile-text {
-    margin-top: 170px;
-  } */
-  /* #icon-group {
-    flex-direction: column;
-  } */
-  /* .right {
-    position: relative;
-    left: 0;
-    right: 0;
-  } */
+  .download-page-btn {
+    position:relative;
+    width: 100%;
+    bottom: 1em;
+    margin-top: 1em;
+  }
+  .filterGroup1 {
+    width: 52%;
+  }
+  .filterGroup2 {
+    width:35%;
+  }
+  .switch {
+    display: none;
+  }
 }

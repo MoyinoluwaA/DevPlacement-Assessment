@@ -1,14 +1,16 @@
 import React from 'react';
 
-const Index = ({className, placeholder, handleChange, handleEnter, value}) => {
+const Index = ({className, placeholder, handleChange, onSubmit, value}) => {
     return (
-        <input type="search" 
-        className={className}
-        placeholder={placeholder} 
-        onChange={handleChange}
-        onKeyPress={handleEnter}
-        value={value}
-        /> 
+        <form onSubmit={onSubmit}>
+            <input type="search" 
+            className={className}
+            placeholder={placeholder} 
+            onChange={handleChange}
+            // onKeyPress={handleChange}
+            value={value}
+            /> 
+        </form>
     )
 }
 

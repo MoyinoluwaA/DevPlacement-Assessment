@@ -3,13 +3,19 @@ import IconButton from '../Button'
 import SearchBox from '../Searchbox'
 
 const Index = (props) => {
-    const {handleAllUser,handleMaleUser, handleFemaleUser} = props
+    const {handleAllUser,handleMaleUser, handleFemaleUser, handleSearch, onSearchUser, value} = props
     return (
         <div id="text-wrapper">
             <h2 id="hello">Hello, <span id="my-name">Emerald</span></h2>
             <p id="welcome">Welcome to your dashboard, kindly sort through the user base</p>
             <div className="left-search">
-                <SearchBox className="searchInput" placeholder="Find a user" />
+                <SearchBox 
+                className="searchInput" 
+                placeholder="Find a user" 
+                handleChange={handleSearch} 
+                onSubmit={onSearchUser} 
+                value={value}
+                />
                 <i className="fa fa-search left-search-icon" aria-hidden="true"></i>       
             </div>
             <p id="users">Show Users</p>
